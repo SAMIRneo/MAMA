@@ -22,11 +22,20 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Vérifier le parcours
+        run: |
+          node --check script.js
+          node --check programme-core.js
+          node --check programme.js
+          node --test tests/programme.test.cjs
       - uses: actions/configure-pages@v5
       - name: Préparer le site
         run: |
           mkdir _site
-          cp index.html styles.css script.js _site/
+          cp index.html styles.css script.js programme.css programme-core.js programme.js _site/
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

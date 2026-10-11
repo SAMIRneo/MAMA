@@ -3,10 +3,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Curseur-fleur ---------- */
   const cursor = document.getElementById('cursor');
-  if (finePointer && cursor) {
+  if (finePointer && !reducedMotion && cursor) {
     document.documentElement.classList.add('has-cursor');
     let cx = -100, cy = -100, tx = -100, ty = -100;
 
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Stickers parallax ---------- */
   const stickers = document.querySelectorAll('.sticker[data-depth]');
-  if (finePointer && stickers.length) {
+  if (finePointer && !reducedMotion && stickers.length) {
     document.addEventListener('mousemove', (e) => {
       const dx = (e.clientX / window.innerWidth - 0.5);
       const dy = (e.clientY / window.innerHeight - 0.5);
@@ -63,6 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.setAttribute('aria-expanded', String(open));
   });
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && navLinks.classList.contains('is-open')) { closeMenu(); burger.focus(); }
+  });
 
   /* ---------- Apparition au scroll ---------- */
   const reveals = document.querySelectorAll('.reveal');
@@ -88,13 +92,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const billings = document.querySelectorAll('.plan__billing');
 
   const animateNumber = (el, from, to) => {
+    if (el._numberFrame) cancelAnimationFrame(el._numberFrame);
+    if (reducedMotion) { el.textContent = to.toLocaleString('fr-FR', { maximumFractionDigits: 2 }); return; }
     const start = performance.now();
     const step = (now) => {
       const p = Math.min((now - start) / 420, 1);
       const eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(from + (to - from) * eased);
-      if (p < 1) requestAnimationFrame(step);
-      else el.textContent = to;
+      el.textContent = (from + (to - from) * eased).toLocaleString('fr-FR', { maximumFractionDigits: 2 });
+      if (p < 1) el._numberFrame = requestAnimationFrame(step);
+      else el.textContent = to.toLocaleString('fr-FR', { maximumFractionDigits: 2 });
     };
     requestAnimationFrame(step);
   };
@@ -107,17 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     values.forEach(el => {
       const target = Number(el.dataset[period]);
-      const current = Number(el.textContent) || target;
+      const current = Number(el.textContent.replace(/\s/g, '').replace(',', '.')) || target;
       animateNumber(el, current, target);
     });
-    billings.forEach((el, i) => {
-      if (i === 2) {
-        el.textContent = period === 'annual'
-          ? 'soit 29 € la semaine — facturé 1 488 €/an'
-          : 'soit 34 € la semaine — facturé chaque mois';
-      } else {
-        el.textContent = period === 'annual' ? 'facturé 1 fois par an (2 mois offerts)' : 'facturé chaque mois';
-      }
+    billings.forEach(el => {
+      el.textContent = period === 'annual'
+        ? `${Number(el.dataset.total).toLocaleString('fr-FR')} €/an prévus · abonnement non ouvert`
+        : 'tarif prévu · abonnement non ouvert';
     });
   };
   toggleBtns.forEach(btn => btn.addEventListener('click', () => setPeriod(btn.dataset.period)));
@@ -178,6 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const burstConfetti = (count = 140) => {
+    if (reducedMotion) return;
     const canvas = ensureCanvas();
     for (let i = 0; i < count; i++) {
       parts.push({
@@ -236,14 +239,14 @@ document.addEventListener('DOMContentLoaded', () => {
       emoji: '☕',
       level: 'Profil : le grincement élégant',
       title: 'C\'est La Solide pour toi.',
-      text: 'Tu grinces des dents (on t\'entend), mais tu veux des outils concrets et un plan. La Solide te donne la structure et le groupe pour passer à l\'action.',
+      text: 'Tu veux des outils concrets et un plan. La Solide ajoute des bilans de rythme et des ateliers pour faire avancer ton projet, sans rendez-vous.',
       cta: 'Voir La Solide →'
     },
     totale: {
       emoji: '🌪️',
       level: 'Profil : mode tornade en escarpins',
       title: 'C\'est La Totale, sans hésiter.',
-      text: 'Tu n\'en es plus à ta période d\'essai : tu veux tout changer, vite, et avec quelqu\'un à tes côtés. Coach dédiée, plan sur-mesure, garantie résultat.',
+      text: 'Tu veux un cadre plus complet : 90 jours, des exercices et des mises en situation pour préparer ta prochaine étape. Tu gardes toujours le choix du rythme.',
       cta: 'Voir La Totale →'
     }
   };
@@ -301,6 +304,8 @@ document.addEventListener('DOMContentLoaded', () => {
       q.title.textContent = r.title;
       q.text.textContent = r.text;
       q.cta.textContent = r.cta;
+      q.cta.href = `#formule-${tier}`;
+      q.cta.dataset.choosePlan = tier;
       q.result.hidden = false;
 
       q.section.classList.add('is-celebrating');
