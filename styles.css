@@ -24,7 +24,7 @@
 
 [hidden] { display: none !important; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; overflow-x: clip; }
 
 body {
   font-family: var(--font-b);
