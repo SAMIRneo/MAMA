@@ -1,73 +1,47 @@
-# BOUM! — Livraison autonome des offres
+# BOUM! — Trois formations indépendantes, livrables en autonomie
 
-## Décision produit
+## Positionnement validé par l'implémentation
 
-Conserver le public, le ton, les trois noms et la direction artistique. Remplacer les prestations qui consommaient du temps humain par des livrables numériques : parcours, fiches, plans ajustés, ateliers asynchrones, simulations écrites et bilans. Aucun coaching humain, groupe communautaire, rendez-vous, réponse personnelle du fondateur ou résultat garanti.
+La Douce / Souffler traite la charge mentale et les sollicitations numériques. La Solide / Prendre sa place travaille les besoins, les limites et les conversations ordinaires. La Totale / Oser la suite accompagne l'exploration d'un projet et d'une nouvelle étape de vie.
 
-L'objectif est une prestation courante délivrée sans intervention quotidienne du fondateur. Une entreprise réelle garde des responsabilités : incidents, litiges et décisions hors cadre ne peuvent pas toujours être confiés à l'IA.
+Les trois formations ne sont plus une pyramide d'abonnements. Les tarifs envisagés sont respectivement 19, 39 et 69 euros en achat unique ; ils ne sont pas encaissables aujourd'hui. Leurs durées indicatives sont 3, 4 et 6 semaines. La feuille de route à 90 jours est un livrable de La Totale, pas 90 jours de rendez-vous.
 
-## Droits et limites prévus
+La source `formations.js` contient 39 leçons distinctes. Chaque leçon associe une idée, une consigne, un exemple et une trace à garder. La version découverte donne accès à ces contenus sans compte et sans paiement.
 
-| Fonction | La Douce | La Solide | La Totale |
-| --- | --- | --- | --- |
-| Point de départ personnalisé | Oui | Oui | Oui |
-| Parcours | 30 jours | 30 jours adaptatifs | 90 jours, trois phases |
-| Fiches texte | Quotidiennes | Quotidiennes | Quotidiennes |
-| Audio | Lecture de la fiche | Lecture de la fiche | Lecture de la fiche |
-| Bilan | Hebdomadaire | Hebdomadaire avec nouveau plan | Hebdomadaire + bilan à 30/60/90 jours |
-| Ateliers asynchrones | — | 4 par mois | 8 par mois |
-| Mises en situation IA | — | — | 8 par mois, 6 tours maximum par session |
-| Réécriture d'un petit pas | — | 10 par mois | 30 par mois |
-| Export | Plan et bilan | Plan et bilan | Dossier complet |
+## Orientation et conversion
 
-Ces limites constituent un cadre de lancement à vérifier avec les coûts réels du fournisseur choisi. Aucune génération illimitée. Les droits doivent être appliqués par le serveur à partir de l'abonnement, jamais par un simple sélecteur du navigateur.
+1. Priorité explicite → formation correspondante.
+2. Frein du quotidien → explication contextualisée.
+3. Temps choisi → format de séance de 5, 10 ou 15 minutes.
+4. Résultat → premier geste utile, programme détaillé, ouverture du carnet.
 
-## Chaîne cible
+Le prix n'entre pas dans la décision. Le mini-bilan n'évalue aucune pathologie ni degré de détresse. La personne peut choisir un autre parcours. Les trois liens restent disponibles sans JavaScript.
 
-1. **Quiz gratuit** : suggestion indicative ; choix final conservé par la cliente.
-2. **Achat** : checkout hébergé, conditions d'achat, période et montant exact affichés avant confirmation.
-3. **Activation** : webhook signé ; traitement idempotent de son identifiant ; activation seulement après confirmation du fournisseur de paiement.
-4. **Accueil** : compte client ; consentement distinct pour les rappels facultatifs ; objectif, temps disponible et énergie. Aucun questionnaire médical.
-5. **Génération** : tâche serveur vers le fournisseur IA ; validation de la sortie structurée ; enregistrement du plan. Les fiches éditoriales servent de repli annoncé en cas de panne.
-6. **Livraison** : fiche dans l'espace client ; lecture audio à la demande ; rappels uniquement si la cliente les choisit.
-7. **Progression** : actions signalées, historique daté, bilan hebdomadaire. Ne pas déduire de réussite psychologique à partir du nombre de clics.
-8. **Ajustement** : à partir de La Solide, nouveau plan après bilan. Conserver l'ancien et les actions réalisées.
-9. **Renouvellement** : confirmation par webhook ; à la fin des 30/90 jours, proposer un nouveau cycle autonome.
-10. **Annulation** : portail client autonome ; actualisation de la date de fin par webhook ; maintien des droits selon les conditions d'achat.
-11. **Remboursement** : parcours autonome pour les cas couverts par une politique définie ; contrôle serveur du montant et de l'éligibilité. Les cas hors cadre restent une responsabilité de l'exploitant.
-12. **Sortie** : export, demande de suppression et arrêt des notifications ; conservation des seules données requises selon la politique définie.
+## Automatisation cible
 
-## Automates à raccorder
-
-| Déclencheur | Action automatique | Protection |
+| Étape | Aujourd'hui | Service commercial à raccorder |
 | --- | --- | --- |
-| Paiement confirmé | Activer les droits, préparer le parcours | Webhook signé, idempotence, utilisateur vérifié |
-| Début du jour choisi | Préparer la fiche suivante | Fuseau client, rappel consenti, pas de doublon |
-| Bilan rempli | Générer le prochain plan | Historique limité, schéma validé, quota |
-| Atelier demandé | Générer l'exercice autorisé | Authentification, droits, plafond de coût |
-| Simulation demandée | Générer un tour de dialogue | La Totale uniquement, limite de tours |
-| Renouvellement/annulation | Actualiser les droits | État confirmé du prestataire |
-| Incident IA | Afficher une fiche éditoriale de repli | Mode indiqué, tentatives bornées |
+| Orientation | Règles locales transparentes | Même logique, sans coût IA inutile |
+| Programme | 39 contenus éditoriaux accessibles | Achat et droits d'accès serveur |
+| Personnalisation | Format selon le temps choisi | IA adaptant une leçon du programme choisi |
+| Progression | Carnet local et notes facultatives | Stockage de compte avec autorisations |
+| Bilan | Export des notes et exercices réalisés | Synthèse IA uniquement après consentement |
+| Audio | Synthèse vocale du navigateur | Option de fichiers audio préparés si nécessaire |
+| Livraison | Accès immédiat dans le navigateur | Webhook de paiement signé, activation idempotente |
+| Assistance courante | FAQ claire | Aide automatique limitée au fonctionnement du service |
+| Rappels | Aucun envoi | Messages consentis et désinscription autonome |
+| Export / effacement | Fonctionnels sur le carnet local | Export serveur et politique de conservation |
 
-Prévoir une file persistante, des tâches idempotentes et un nombre borné de tentatives. Une reprise après panne ne doit pas facturer une nouvelle génération. Notifier l'exploitant seulement lorsqu'une intervention devient nécessaire.
+Le système ne doit promettre ni appel, ni groupe animé, ni réponse humaine personnelle. Les cas hors cadre, incidents et litiges ne peuvent pas être garantis sans intervention de l'exploitant.
 
-## Cadre du compagnon IA
+## Contrat du futur moteur IA
 
-Français clair, chaleureux, direct. Humour sans moquerie. Identifier le service comme une IA, demander peu de données et proposer une action concrète. Aucun diagnostic, traitement, résultat garanti, faux avis, pression vers l'offre chère ou dépendance affective. La cliente garde ses décisions.
+Le moteur reçoit une formation autorisée, l'identifiant d'une leçon et les seules données consenties. Il s'appuie sur le contenu éditorial correspondant, sans inventer un cursus, un diagnostic ou un résultat. Il peut simplifier une consigne, proposer un exemple ordinaire et résumer des notes choisies. L'IA est identifiée comme telle et n'agit jamais sur les paiements ou les droits.
 
-Un sujet hors cadre interrompt l'exercice inadapté et oriente vers une aide humaine qualifiée. Les éventuelles coordonnées d'urgence doivent venir d'une source validée pour le pays, jamais d'une invention du modèle.
+Les notes saisies dans la version actuelle ne sont pas envoyées à un fournisseur. Toute future transmission devra être expliquée et consentie avant sa mise en service. Prévoir un plafond de coût, des tentatives limitées, une sortie structurée validée et un repli annoncé vers la fiche éditoriale.
 
-Les entrées clientes sont des données, pas des instructions système. L'IA n'a pas d'outil de paiement ou d'annulation. Les actions financières et les droits sont gérés par du code déterministe et une confirmation explicite de la cliente.
+## Activation restante
 
-## Avant ouverture des ventes
+Backend HTTPS avec authentification et droits ; compte fournisseur IA et secret serveur ; compte de paiement, produits en achat unique et webhooks ; identité et contact réels de l'exploitant ; conditions de vente et politique de données ; recette d'achat, accès, panne, export et suppression.
 
-- Backend HTTPS : authentification, comptes, stockage et droits.
-- Fournisseur IA : secret serveur, modèle et budget mesurés.
-- Paiement : produits, checkout, portail et webhooks.
-- File de tâches et planificateur ; email seulement si des rappels sont proposés.
-- Identité et contact réels de l'exploitant, conditions de vente et politique de données.
-- Recette réelle : achat de test, annulation, droits, panne IA, export et suppression.
-
-## État actuel
-
-La vitrine et l'aperçu local sont publiables sur GitHub Pages. L'aperçu adapte des fiches préécrites : ce n'est pas une IA. Le serveur, les paiements et les automates ci-dessus sont le contrat de réalisation du service payant, pas une infrastructure déjà connectée.
+Ne pas simuler un paiement ou une génération IA réussis tant que ces services ne sont pas connectés. GitHub Pages continue d'héberger la vitrine et la découverte.

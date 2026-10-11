@@ -27,15 +27,19 @@ jobs:
           node-version: 24
       - name: Vérifier le parcours
         run: |
+          node scripts/build-site.cjs
+          node --check formations.js
           node --check script.js
           node --check programme-core.js
           node --check programme.js
           node --test tests/programme.test.cjs
+          node scripts/verify-site.cjs
       - uses: actions/configure-pages@v5
       - name: Préparer le site
         run: |
           mkdir _site
-          cp index.html styles.css script.js programme.css programme-core.js programme.js _site/
+          cp index.html site.css formations.js script.js programme-core.js programme.js sitemap.xml robots.txt 404.html _site/
+          cp -r formations assets _site/
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
