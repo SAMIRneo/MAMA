@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOUM! — Développement personnel pour femmes assumées</title>
+  <meta name="description" content="Coaching, conseils et communauté pour les femmes qui en ont assez d'attendre. 3 formules, garantie 30 jours, zéro langue de bois.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..900;1,9..144,500..900&family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="cursor" id="cursor" aria-hidden="true">🌼</div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="logo" aria-label="BOUM, accueil">
+        <span class="logo__star" aria-hidden="true">✦</span>BOUM<span class="logo__bang" aria-hidden="true">!</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Navigation principale">
+        <a href="#manifeste">Le truc</a>
+        <a href="#quiz">Le quiz</a>
+        <a href="#formules">Les formules</a>
+        <a href="#faq">La FAQ</a>
+        <a href="#formules" class="btn btn--sm btn--fill nav__cta-m">Je me lance 🚀</a>
+      </nav>
+      <a href="#formules" class="btn btn--sm btn--fill nav__cta">Je me lance 🚀</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero__rays" aria-hidden="true"></div>
+
+      <span class="sticker sticker--1" data-depth="26" aria-hidden="true">🌻</span>
+      <span class="sticker sticker--2" data-depth="14" aria-hidden="true">☕</span>
+      <span class="sticker sticker--3" data-depth="34" aria-hidden="true">✨</span>
+      <span class="sticker sticker--4" data-depth="20" aria-hidden="true">💅</span>
+      <span class="sticker sticker--5" data-depth="30" aria-hidden="true">🍷</span>
+
+      <div class="badge badge--spin" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <defs><path id="circPath" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs>
+          <text><textPath href="#circPath">ZÉRO BLABLA • 100 % VOUS • ZÉRO BLABLA • 100 % VOUS •</textPath></text>
+        </svg>
+        <span class="badge__core">😎</span>
+      </div>
+
+      <div class="container hero__inner">
+        <p class="hero__kicker reveal"><span class="hero__kicker-tag">Développement personnel</span> pour femmes · 45 ans et +</p>
+
+        <h1 class="hero__title reveal">
+          La suite sera<br>
+          la <em>meilleure</em>
+          <span class="doodle" aria-hidden="true">
+            <svg viewBox="0 0 320 30" preserveAspectRatio="none"><path d="M6 20 C 70 6, 140 26, 210 12 S 300 8, 314 16" fill="none"/></svg>
+          </span>
+          partie.
+        </h1>
+
+        <p class="hero__sub reveal">
+          Coaching, conseils et communauté pour les femmes qui en ont assez d'attendre
+          le « bon moment ». Spoiler&nbsp;: c'est maintenant, et ça sent bon le café fraîchement moulu.
+        </p>
+
+        <div class="hero__cta reveal">
+          <a href="#formules" class="btn btn--big btn--fill">Je découvre les formules</a>
+          <a href="#quiz" class="btn btn--big btn--outline">Faire le quiz — 2 min</a>
+        </div>
+
+        <ul class="hero__trust reveal" aria-label="Nos engagements">
+          <li>💛 Garantie 30 jours</li>
+          <li>🔒 Sans engagement</li>
+          <li>👯 2&nbsp;400 femmes accompagnées</li>
+          <li>⭐ 4,9/5 (612 avis)</li>
+        </ul>
+      </div>
+
+      <a href="#manifeste" class="hero__cue" aria-label="Défiler vers le bas">↓</a>
+    </section>
+
+    <!-- ===== RUBAN DÉFILANT ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>ZÉRO LANGUE DE BOIS ✦ ON RIT ✦ ON AVANCE ✦ PAS DE JUGEMENT ✦ 50 ANS = DÉPART ✦ CAFÉ OFFERT ✦&nbsp;</span>
+        <span>ZÉRO LANGUE DE BOIS ✦ ON RIT ✦ ON AVANCE ✦ PAS DE JUGEMENT ✦ 50 ANS = DÉPART ✦ CAFÉ OFFERT ✦&nbsp;</span>
+      </div>
+    </div>
+    <!-- ===== MANIFESTE ===== -->
+    <section class="manifeste" id="manifeste">
+      <div class="container">
+        <p class="eyebrow eyebrow--dark reveal">Le truc, en deux phrases</p>
+        <h2 class="manifeste__title reveal">
+          Ici, on ne vous dit pas de <s>lâcher prise</s>.
+          <span class="manifeste__punch">On vous dit&nbsp;: prenez la nôtre.</span>
+        </h2>
+        <p class="manifeste__sub reveal">
+          Vous avez assez rangé la vie de tout le monde. Il est temps de vous occuper de vous —
+          avec méthode, humour, et zéro adepte de la «&nbsp;pensée positive&nbsp;» forcée.
+        </p>
+
+        <div class="manifeste__cards">
+          <div class="mcard mcard--1 reveal">
+            <span class="mcard__emoji" aria-hidden="true">🚫</span>
+            <h3>On ne vend pas de rêve</h3>
+            <p>Des outils concrets, testés par des femmes qui ont un job, des enfants, des parents âgés et un lave-vaisselle en panne.</p>
+          </div>
+          <div class="mcard mcard--2 reveal">
+            <span class="mcard__emoji" aria-hidden="true">🤣</span>
+            <h3>On rit beaucoup</h3>
+            <p>Rire, c'est aussi un muscle. Et le nôtre est très bien développé, merci.</p>
+          </div>
+          <div class="mcard mcard--3 reveal">
+            <span class="mcard__emoji" aria-hidden="true">🫶</span>
+            <h3>Jugement zéro</h3>
+            <p>Pas de «&nbsp;il fallait commencer plus tôt&nbsp;». On commence maintenant. Point.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COLLAGE / CE QU'ON Y TROUVE ===== -->
+    <section class="collage">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Dans la boîte</p>
+          <h2>Ce que tu vas y trouver</h2>
+          <p class="section-sub">Six trucs bien rangés, aucune croix magnétique à coller sur le frigo.</p>
+        </div>
+
+        <div class="collage__grid">
+          <article class="chip chip--a reveal">
+            <span class="chip__emoji" aria-hidden="true">🧭</span>
+            <h3>Le bilan sans filtre</h3>
+            <p>30 minutes pour dire les vrais trucs. Pas de questionnaire à 40 cases.</p>
+          </article>
+          <article class="chip chip--b reveal">
+            <span class="chip__emoji" aria-hidden="true">🎧</span>
+            <h3>Des conseils qui tiennent</h3>
+            <p>10 minutes d'audio dans les oreilles, une idée par jour, applicable avant le dîner.</p>
+          </article>
+          <article class="chip chip--c reveal">
+            <span class="chip__emoji" aria-hidden="true">👯‍♀️</span>
+            <h3>Le groupe</h3>
+            <p>Des femmes du même âge, mêmes doutes, mêmes blagues. On s'entraide pour de vrai.</p>
+          </article>
+          <article class="chip chip--d reveal">
+            <span class="chip__emoji" aria-hidden="true">📅</span>
+            <h3>Le plan semaine</h3>
+            <p>Trois actions minuscules qui changent tout. Même la semaine où tout déraille.</p>
+          </article>
+          <article class="chip chip--e reveal">
+            <span class="chip__emoji" aria-hidden="true">💅</span>
+            <h3>Coaching 1:1</h3>
+            <p>Une coach qui vous connaît par votre prénom (et votre thé préféré).</p>
+          </article>
+          <article class="chip chip--f reveal">
+            <span class="chip__emoji" aria-hidden="true">🏆</span>
+            <h3>Des preuves</h3>
+            <p>Un tableau de bord qui montre vos progrès. Même les minuscules.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- ===== QUIZ INTERACTIF ===== -->
+    <section class="quiz" id="quiz">
+      <div class="container quiz__wrap">
+        <div class="quiz__intro reveal">
+          <p class="eyebrow eyebrow--light">Mini-quiz rigolo</p>
+          <h2>C'est quoi ton niveau de «&nbsp;j'en ai marre&nbsp;»&nbsp;?</h2>
+          <p>Trois questions, deux minutes, zéro mail piégé. À la fin, on te dit quelle formule te va — et pourquoi, sans te la refiler à tout le monde.</p>
+          <span class="quiz__sticker" aria-hidden="true">🤷‍♀️</span>
+          <span class="quiz__sticker quiz__sticker--b" aria-hidden="true">🍸</span>
+        </div>
+
+        <div class="quiz__card reveal" id="quizCard">
+          <div class="quiz__progress" aria-hidden="true"><span id="quizBar"></span></div>
+          <p class="quiz__count" id="quizCount">Question 1 sur 3</p>
+          <h3 class="quiz__question" id="quizQuestion">Lundi matin, 7 h 42. Ton premier réflexe&nbsp;?</h3>
+          <div class="quiz__answers" id="quizAnswers"></div>
+          <button class="quiz__back" id="quizBack" hidden>← Attends, je repense à ma réponse</button>
+
+          <div class="quiz__result" id="quizResult" hidden>
+            <span class="quiz__result-emoji" id="resultEmoji" aria-hidden="true">🎉</span>
+            <p class="quiz__result-level" id="resultLevel"></p>
+            <h3 id="resultTitle"></h3>
+            <p id="resultText"></p>
+            <a class="btn btn--fill btn--big" id="resultCta" href="#formules">Voir ma formule</a>
+            <button class="quiz__restart" id="quizRestart" type="button">On refait le coup&nbsp;? ↺</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TÉMOIGNAGES ===== -->
+    <section class="temoignages" id="temoignages">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Elles ont osé</p>
+          <h2>Des femmes, pas des cas d'école</h2>
+          <p class="section-sub">Avis vérifiés après au moins 8 semaines. Les prénoms sont vrais, les âges aussi.</p>
+        </div>
+
+        <div class="polas">
+          <figure class="pola pola--1 reveal">
+            <span class="pola__tape" aria-hidden="true"></span>
+            <div class="pola__photo" aria-hidden="true">🧗‍♀️</div>
+            <blockquote>« À 54 ans, j'ai signé pour une formation de caviste. Mon mari a dit "à ton âge ?". Ma réponse : exactement à mon âge. »</blockquote>
+            <figcaption><strong>Sylvie, 54 ans</strong><span>Angers · formule La Totale</span></figcaption>
+            <div class="pola__stars" aria-label="5 sur 5">★★★★★</div>
+          </figure>
+
+          <figure class="pola pola--2 reveal">
+            <span class="pola__tape pola__tape--pink" aria-hidden="true"></span>
+            <div class="pola__photo" aria-hidden="true">🎨</div>
+            <blockquote>« Le quiz m'a dit "t'es en mode tornade". Il avait raison. Trois mois plus tard, j'ai enfin mon atelier de poterie. »</blockquote>
+            <figcaption><strong>Nadia, 49 ans</strong><span>Rouen · formule La Solide</span></figcaption>
+            <div class="pola__stars" aria-label="5 sur 5">★★★★★</div>
+          </figure>
+
+          <figure class="pola pola--3 reveal">
+            <span class="pola__tape pola__tape--sage" aria-hidden="true"></span>
+            <div class="pola__photo" aria-hidden="true">🐕</div>
+            <blockquote>« Zéro blabla, des outils, et une coach qui me répond le dimanche. Ma fille dit que je suis "moins reloue". Merci. »</blockquote>
+            <figcaption><strong>Christine, 58 ans</strong><span>Bègles · formule La Totale</span></figcaption>
+            <div class="pola__stars" aria-label="5 sur 5">★★★★★</div>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <!-- ===== LES 3 FORMULES ===== -->
+    <section class="formules" id="formules">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Les formules</p>
+          <h2>Trois formules.<br>Une va te sauter aux yeux.</h2>
+          <p class="section-sub">On te dit celles que choisissent 7 femmes sur 10 — et pourquoi aucune n'a regretté.</p>
+
+          <div class="toggle" role="group" aria-label="Période de facturation">
+            <button class="toggle__btn is-active" data-period="monthly" aria-pressed="true">Chaque mois</button>
+            <button class="toggle__btn" data-period="annual" aria-pressed="false">L'année 🎁 2 mois offerts</button>
+          </div>
+        </div>
+
+        <div class="plans">
+
+          <!-- La Douce -->
+          <article class="plan plan--douce reveal">
+            <span class="plan__sticker" aria-hidden="true">🫖</span>
+            <header class="plan__head">
+              <h3>La Douce</h3>
+              <p>Pour te remettre en route sans te mettre la pression.</p>
+            </header>
+            <div class="plan__price">
+              <span class="plan__amount"><span class="plan__value" data-monthly="19" data-annual="16">19</span>&nbsp;€</span>
+              <span class="plan__per">/ mois</span>
+              <span class="plan__billing">facturé chaque mois</span>
+            </div>
+            <a href="#garantie" class="btn btn--block btn--outline">Je commence doucement</a>
+            <ul class="plan__list">
+              <li>Le programme «&nbsp;30 jours à moi&nbsp;» guidé pas à pas</li>
+              <li>Un conseil audio par semaine (10 min max, promis)</li>
+              <li>Le groupe privé, cafés virtuels compris</li>
+              <li>Ton tableau de bord de progrès</li>
+              <li>Garantie 30 jours</li>
+            </ul>
+          </article>
+
+          <!-- La Solide -->
+          <article class="plan plan--solide reveal">
+            <span class="plan__sticker" aria-hidden="true">☕</span>
+            <header class="plan__head">
+              <h3>La Solide</h3>
+              <p>Pour passer de «&nbsp;j'aimerais bien&nbsp;» à «&nbsp;je l'ai fait&nbsp;».</p>
+            </header>
+            <div class="plan__price">
+              <span class="plan__amount"><span class="plan__value" data-monthly="59" data-annual="49">59</span>&nbsp;€</span>
+              <span class="plan__per">/ mois</span>
+              <span class="plan__billing">facturé chaque mois</span>
+            </div>
+            <a href="#garantie" class="btn btn--block btn--outline">Je prends la solide</a>
+            <ul class="plan__list">
+              <li>Tout ce qu'il y a dans <strong>La Douce</strong></li>
+              <li>La bibliothèque entière (50+ ressources)</li>
+              <li>2 ateliers de groupe par mois</li>
+              <li>Ton plan d'action personnalisé</li>
+              <li>Objectifs du trimestre, on vérifie ensemble</li>
+            </ul>
+          </article>
+          <!-- La Totale : la plus chère, la plus enviée -->
+          <article class="plan plan--totale reveal">
+            <span class="plan__ribbon">La préférée — 7 femmes sur 10</span>
+            <header class="plan__head">
+              <span class="plan__badge">⭐ Meilleure offre</span>
+              <h3>La Totale</h3>
+              <p>Le grand train. Celui qui change la trajectoire.</p>
+            </header>
+            <div class="plan__price">
+              <span class="plan__old">Valeur marché&nbsp;: 390&nbsp;€</span>
+              <span class="plan__amount"><span class="plan__value" data-monthly="149" data-annual="124">149</span>&nbsp;€</span>
+              <span class="plan__per">/ mois</span>
+              <span class="plan__billing">soit 34 € la semaine — facturé chaque mois</span>
+            </div>
+            <a href="#garantie" class="btn btn--block btn--fill btn--big">J'y vais, ça suffit</a>
+            <p class="plan__note">★ Conseillée par 94 % de nos femmes accompagnées</p>
+            <ul class="plan__list">
+              <li>Tout ce qu'il y a dans <strong>La Solide</strong></li>
+              <li><strong>Coach à toi</strong> — 2 sessions individuelles d'1 h par mois</li>
+              <li><strong>Plan 100 % sur-mesure</strong>, révisé chaque semaine</li>
+              <li><strong>Réponse prioritaire 7j/7</strong> par message (oui, même dimanche)</li>
+              <li>Protocole anti-procrastination avancé + bilan des blocages</li>
+              <li>Bilan mensuel détaillé, avec plan ajusté</li>
+              <li><strong>Garantie résultat</strong>&nbsp;: 3 mois offerts si rien ne bouge</li>
+            </ul>
+            <footer class="plan__foot">
+              <p><strong>Le calcul est vite fait.</strong> Deux séances de coaching valent 180&nbsp;€ ailleurs&nbsp;; ici, elles sont dedans. Et si rien ne bouge en 30 jours, tu es remboursée — sans avoir à écrire un mot de justification.</p>
+            </footer>
+          </article>
+        </div>
+
+        <p class="formules__reassure reveal">
+          🛡️ Toutes les formules incluent la garantie 30 jours, le paiement sécurisé et le droit de changer d'avis à tout moment. On ne réclame pas votre chaton en otage.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== GARANTIE ===== -->
+    <section class="garantie" id="garantie">
+      <div class="container garantie__box reveal">
+        <span class="garantie__icon" aria-hidden="true">🛡️</span>
+        <div>
+          <h2>30 jours pour changer d'avis.</h2>
+          <p>Tu essaies, tu avances, et si le programme ne te convient pas, tu écris un simple message&nbsp;: on te rembourse tout. Aucune question, aucun formulaire à rallonge. C'est écrit noir sur blanc dans nos CGV — et on les a relues deux fois, promis.</p>
+        </div>
+        <span class="garantie__stamp" aria-hidden="true">REMBOURSÉ<br>SI PAS<br>CONTENTE</span>
+      </div>
+    </section>
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+      <div class="container container--narrow">
+        <div class="section-head reveal">
+          <p class="eyebrow">La FAQ, sans détour</p>
+          <h2>Ce que vous vous demandez (à raison)</h2>
+        </div>
+
+        <div class="faq__list">
+          <details class="faq__item reveal">
+            <summary>« Je suis trop vieille pour ça, non&nbsp;? »<span class="faq__plus" aria-hidden="true"></span></summary>
+            <p>Vous avez 52 ans, pas 92. Et même à 92, on connaît des dames qui ont repris le piano, le dessin à cheval ou l'espagnol. L'âge, c'est un chiffre ; l'envie, c'est une décision.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Combien de temps par semaine&nbsp;?<span class="faq__plus" aria-hidden="true"></span></summary>
+            <p>2 à 3 heures, réparties comme vous voulez. Les ressources font 10 à 20 minutes : elles passent dans un trajet en train ou un café.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Et si je suis très occupée (job, enfants, parents)&nbsp;?<span class="faq__plus" aria-hidden="true"></span></summary>
+            <p>C'est même pour ça qu'on existe. Le plan semaine tient en trois petites actions. Et la semaine où tout déraille, on ne vous gronde pas : on reprend là où vous en étiez.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Y a-t-il un engagement&nbsp;?<span class="faq__plus" aria-hidden="true"></span></summary>
+            <p>Aucun. Vous mettez en pause ou vous arrêtez quand vous voulez, en deux clics, sans appel téléphonique de rétention. Jamais.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Comment se passe le remboursement&nbsp;?<span class="faq__plus" aria-hidden="true"></span></summary>
+            <p>Un message dans les 30 jours, remboursement sous 5 jours ouvrés, sans justification. On préfère vous voir partir contente que rester à contrecœur.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Les seings-oupsions sont-elles en visio&nbsp;?<span class="faq__plus" aria-hidden="true"></span></summary>
+            <p>Oui, en visio, aux horaires qui vous arrangent — y compris le soir. Le lien de réservation arrive avec votre inscription.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Puis-je changer de formule plus tard&nbsp;?<span class="faq__plus" aria-hidden="true"></span></summary>
+            <p>N'importe quand, au prorata, sans frais. Beaucoup commencent par La Douce et montent en La Totale après leur bilan.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="cta">
+      <div class="container cta__inner reveal">
+        <span class="cta__sticker" aria-hidden="true">🎈</span>
+        <span class="cta__sticker cta__sticker--b" aria-hidden="true">✨</span>
+        <h2>Alors, on se dit<br><em>oui</em>&nbsp;?</h2>
+        <p>2 400 femmes t'attendent. Elles sont sympas, elles ne mordent pas, et le café est offert.</p>
+        <div class="cta__btns">
+          <a href="#formules" class="btn btn--big btn--cream">Je choisis ma formule</a>
+          <a href="#quiz" class="btn btn--big btn--ghost">Je passe par le quiz d'abord</a>
+        </div>
+        <p class="cta__note">Gratuit · 2 minutes · sans engagement</p>
+      </div>
+    </section>
+
+
+
+
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="#top" class="logo logo--footer"><span class="logo__star" aria-hidden="true">✦</span>BOUM<span class="logo__bang">!</span></a>
+        <p class="footer__tag">Le développement personnel des femmes qui ont la rage (et le sens de l'humour).</p>
+        <p class="footer__note">Ce site ne remplace pas un suivi médical ou psychologique. Promis, on n'est pas des gourous.</p>
+      </div>
+      <nav aria-label="Navigation pied de page">
+        <h4>Le programme</h4>
+        <a href="#manifeste">Le truc</a>
+        <a href="#quiz">Le quiz</a>
+        <a href="#formules">Les formules</a>
+        <a href="#faq">La FAQ</a>
+      </nav>
+      <nav aria-label="Informations légales">
+        <h4>Les papiers</h4>
+        <a href="#">Mentions légales</a>
+        <a href="#">CGV</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div>
+        <h4>On papote&nbsp;?</h4>
+        <a href="mailto:bonjour@boum.fr">bonjour@boum.fr</a>
+        <p class="footer__small">Réponse sous 24 h ouvrées, en français correct.<br>Paiement sécurisé CB · Apple Pay · PayPal</p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 BOUM! — Tous droits réservés.</p>
+      <p>Fait avec beaucoup d'amour et un peu d'insolence.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
