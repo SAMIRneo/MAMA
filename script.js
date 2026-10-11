@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     $('finderQuestions').hidden=true;$('finderResult').hidden=false;
     $('resultTitle').textContent=`${c.name} — ${c.title}`;$('resultReason').textContent=recommendation.reason;
     $('resultAction').textContent=recommendation.firstStep;
-    $('resultPace').textContent=`Ton rythme : ${recommendation.minutes} min par séance. ${c.lessons.length} leçons, à ton rythme. Tu peux choisir une autre formation.`;
+    $('resultPace').textContent=`Une première leçon gratuite de 1 minute. Pour la formation complète : ton rythme de ${recommendation.minutes} minutes par séance. Tu peux choisir un autre parcours.`;
     $('resultDetail').href=`formations/${c.slug}/`;
     $('finderStatus').textContent=`Ton parcours conseillé est ${c.name}.`;
     $('resultTitle').focus({preventScroll:true});

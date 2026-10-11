@@ -6,7 +6,7 @@ La Douce / Souffler traite la charge mentale et les sollicitations numériques. 
 
 Les trois formations ne sont plus une pyramide d'abonnements. Les tarifs envisagés sont respectivement 19, 39 et 69 euros en achat unique ; ils ne sont pas encaissables aujourd'hui. Leurs durées indicatives sont 3, 4 et 6 semaines. La feuille de route à 90 jours est un livrable de La Totale, pas 90 jours de rendez-vous.
 
-La source `formations.js` contient 39 leçons distinctes. Chaque leçon associe une idée, une consigne, un exemple et une trace à garder. La version découverte donne accès à ces contenus sans compte et sans paiement.
+La source `formations.js` ne publie désormais que les thèmes, les bénéfices et une courte première leçon. La suite est payante ; les contenus complets des modules seront créés ensuite. Voir `DECOUVERTE-PAYANTE.md` pour cet état qui remplace le catalogue initial de 39 leçons.
 
 ## Orientation et conversion
 
@@ -22,7 +22,7 @@ Le prix n'entre pas dans la décision. Le mini-bilan n'évalue aucune pathologie
 | Étape | Aujourd'hui | Service commercial à raccorder |
 | --- | --- | --- |
 | Orientation | Règles locales transparentes | Même logique, sans coût IA inutile |
-| Programme | 39 contenus éditoriaux accessibles | Achat et droits d'accès serveur |
+| Programme | Thèmes et bénéfices, contenu complet à créer | Achat et droits d'accès serveur |
 | Personnalisation | Format selon le temps choisi | IA adaptant une leçon du programme choisi |
 | Progression | Carnet local et notes facultatives | Stockage de compte avec autorisations |
 | Bilan | Export des notes et exercices réalisés | Synthèse IA uniquement après consentement |

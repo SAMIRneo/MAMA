@@ -32,9 +32,9 @@
     const priorities={douce:'alléger ce que tu portes',solide:'faire entendre tes besoins',totale:'retrouver un cap personnel'};
     return {courseId,obstacle,minutes,reason:`Tu veux ${priorities[courseId]}, et ${obstacles[obstacle]}. ${c.name} te donne un cadre pour commencer par ce besoin précis.`, firstStep:c.firstStep};
   }
-  function fresh(){return {version:2,active:'douce',minutes:10,obstacle:'temps',remember:false,courses:{}};}
+  function fresh(){return {version:3,active:'douce',minutes:10,obstacle:'temps',remember:false,courses:{}};}
   function normalize(input){
-    if(!input||input.version!==2||!Object.hasOwn(courses,input.active))return null;
+    if(!input||input.version!==3||!Object.hasOwn(courses,input.active))return null;
     const state=fresh(); state.active=input.active;
     state.minutes=[5,10,15].includes(input.minutes)?input.minutes:10;
     state.obstacle=Object.hasOwn(obstacles,input.obstacle)?input.obstacle:'temps';state.remember=input.remember===true;
@@ -43,7 +43,7 @@
       if(!record||typeof record!=='object')continue;
       const validIds=new Set(c.lessons.map(l=>l.id));
       const done=Array.isArray(record.done)?[...new Set(record.done.filter(id=>validIds.has(id)))]:[];
-      const current=Number.isInteger(record.current)?Math.min(c.lessons.length-1,Math.max(0,record.current)):0;
+      const current=Number.isInteger(record.current)?Math.min(1,Math.max(0,record.current)):0;
       const notes={};if(record.notes&&typeof record.notes==='object')for(const l of c.lessons){if(Object.hasOwn(record.notes,l.id)&&typeof record.notes[l.id]==='string')notes[l.id]=record.notes[l.id].slice(0,1200);}
       state.courses[c.id]={current,done,notes};
     }

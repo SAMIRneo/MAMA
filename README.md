@@ -12,18 +12,18 @@ Trois besoins distincts ; la formation la plus chère n'est pas une version sup�
 | La Solide — Prendre sa place | Limites et relations du quotidien | 4 modules, 12 leçons, ≈ 4 semaines | Un carnet de limites claires | 39 € |
 | La Totale — Oser la suite | Transitions et projet personnel | 6 modules, 18 leçons, ≈ 6 semaines | Une feuille de route à 90 jours | 69 € |
 
-Le rythme indicatif est de trois leçons par semaine, avec des séances de 5, 10 ou 15 minutes. Les prix sont des **achats uniques envisagés**, sans abonnement. Aucune vente n'est activée. Les 39 leçons sont actuellement en accès libre dans la version découverte.
+Le rythme indicatif est de trois leçons par semaine, avec des séances de 5, 10 ou 15 minutes. Les prix sont des **achats uniques envisagés**, sans abonnement. Aucune vente n'est activée. Seule une courte première leçon est gratuite. Les contenus détaillés des modules seront créés ensuite et réservés aux formations complètes payantes.
 
 ## Expérience
 
 - Mini-bilan de trois questions dès l'accueil : priorité, obstacle, temps disponible.
 - Recommandation explicable fondée sur la priorité, sans score psychologique ni influence du prix.
 - Première action immédiate, lien vers la formation et ouverture du carnet au rythme choisi.
-- Carnets distincts : notes, leçons terminées, navigation, lecture vocale et export texte.
+- Carnets de découverte distincts : note personnelle, lecture vocale douce et export texte. La navigation vers la suite affiche l’accès payant.
 - Sauvegarde facultative sur l'appareil, effacement confirmé, repli si le stockage est bloqué.
 - Trois pages HTML de formation, lisibles et navigables sans JavaScript.
 
-Le site utilise des contenus préécrits. Aucune génération IA, compte membre, facturation ou messagerie n'est connecté. Les exercices ne constituent ni une thérapie ni une certification.
+Le site utilise des contenus préécrits. Aucune génération IA, compte membre, facturation ou messagerie n'est connecté. Les exercices ne constituent ni une thérapie ni une certification. Voir `docs/DECOUVERTE-PAYANTE.md` pour le modèle d’accès et les limites actuelles.
 
 ## Source et génération
 
